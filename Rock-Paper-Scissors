@@ -1,0 +1,30 @@
+import random
+
+print("=== Rock Paper Scissors Game ===")
+
+choices = ["rock", "paper", "scissors"]
+
+# User Choice
+user = input("Enter rock, paper, or scissors: ").lower()
+
+# Computer Choice
+computer = random.choice(choices)
+
+print(f"\nComputer chose: {computer}")
+
+# Game Logic
+if user == computer:
+    print("It's a Tie!")
+
+elif (
+    (user == "rock" and computer == "scissors") or
+    (user == "paper" and computer == "rock") or
+    (user == "scissors" and computer == "paper")
+):
+    print("You Win! 🎉")
+
+elif user in choices:
+    print("Computer Wins! 🤖")
+
+else:
+    print("Invalid Input!")
