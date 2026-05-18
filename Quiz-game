@@ -1,0 +1,42 @@
+print("=== Python Quiz Game ===")
+
+score = 0
+
+# Question 1
+answer = input("1. What does CPU stand for? ")
+
+if answer.lower() == "central processing unit":
+    print("Correct!\n")
+    score += 1
+else:
+    print("Wrong!\n")
+
+# Question 2
+answer = input("2. Which language is used for web development? ")
+
+if answer.lower() == "javascript":
+    print("Correct!\n")
+    score += 1
+else:
+    print("Wrong!\n")
+
+# Question 3
+answer = input("3. What is the capital of India? ")
+
+if answer.lower() == "delhi":
+    print("Correct!\n")
+    score += 1
+else:
+    print("Wrong!\n")
+
+# Final Score
+print("=== Quiz Finished ===")
+print(f"Your Score: {score}/3")
+
+# Result
+if score == 3:
+    print("Excellent! 🎉")
+elif score == 2:
+    print("Good Job 👍")
+else:
+    print("Keep Practicing 😄")
