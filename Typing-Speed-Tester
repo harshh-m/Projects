@@ -1,0 +1,40 @@
+import time
+
+print("=== Typing Speed Tester ===\n")
+
+sentence = "Python is a powerful programming language"
+
+print("Type this sentence exactly:\n")
+print(sentence)
+
+input("\nPress Enter when you're ready...")
+
+start_time = time.time()
+
+typed = input("\nStart typing: ")
+
+end_time = time.time()
+
+# Time Taken
+time_taken = end_time - start_time
+
+# Word Count
+words = len(sentence.split())
+
+# WPM Calculation
+wpm = (words / time_taken) * 60
+
+# Accuracy
+correct_chars = 0
+
+for i in range(min(len(sentence), len(typed))):
+    if sentence[i] == typed[i]:
+        correct_chars += 1
+
+accuracy = (correct_chars / len(sentence)) * 100
+
+# Results
+print("\n=== Results ===")
+print(f"Time Taken: {round(time_taken, 2)} seconds")
+print(f"Typing Speed: {round(wpm, 2)} WPM")
+print(f"Accuracy: {round(accuracy, 2)}%")
