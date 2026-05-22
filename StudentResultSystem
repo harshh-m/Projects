@@ -1,0 +1,59 @@
+students = {}
+
+while True:
+    print("\n=== Student Result Management ===")
+    print("1. Add Student Result")
+    print("2. View Results")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    # Add Student
+    if choice == "1":
+        name = input("Enter student name: ")
+
+        marks1 = float(input("Enter marks for Subject 1: "))
+        marks2 = float(input("Enter marks for Subject 2: "))
+        marks3 = float(input("Enter marks for Subject 3: "))
+
+        total = marks1 + marks2 + marks3
+        percentage = total / 3
+
+        # Grade Logic
+        if percentage >= 90:
+            grade = "A+"
+        elif percentage >= 75:
+            grade = "A"
+        elif percentage >= 60:
+            grade = "B"
+        elif percentage >= 40:
+            grade = "C"
+        else:
+            grade = "Fail"
+
+        students[name] = {
+            "Percentage": round(percentage, 2),
+            "Grade": grade
+        }
+
+        print("Result Added Successfully!")
+
+    # View Results
+    elif choice == "2":
+        print("\n=== Student Results ===")
+
+        if len(students) == 0:
+            print("No student records found.")
+        else:
+            for name, result in students.items():
+                print(f"\nName: {name}")
+                print(f"Percentage: {result['Percentage']}%")
+                print(f"Grade: {result['Grade']}")
+
+    # Exit
+    elif choice == "3":
+        print("Exiting Program...")
+        break
+
+    else:
+        print("Invalid Choice!")
