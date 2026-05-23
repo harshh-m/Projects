@@ -1,0 +1,54 @@
+library = []
+
+while True:
+    print("\n=== Library Management System ===")
+    print("1. Add Book")
+    print("2. View Books")
+    print("3. Issue Book")
+    print("4. Return Book")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    # Add Book
+    if choice == "1":
+        book = input("Enter book name: ")
+        library.append(book)
+
+        print("Book Added Successfully!")
+
+    # View Books
+    elif choice == "2":
+        print("\n=== Available Books ===")
+
+        if len(library) == 0:
+            print("No books available.")
+        else:
+            for book in library:
+                print(f"- {book}")
+
+    # Issue Book
+    elif choice == "3":
+        issue = input("Enter book name to issue: ")
+
+        if issue in library:
+            library.remove(issue)
+            print("Book Issued Successfully!")
+        else:
+            print("Book not available.")
+
+    # Return Book
+    elif choice == "4":
+        returned = input("Enter returned book name: ")
+
+        library.append(returned)
+
+        print("Book Returned Successfully!")
+
+    # Exit
+    elif choice == "5":
+        print("Exiting Library System...")
+        break
+
+    else:
+        print("Invalid Choice!")
