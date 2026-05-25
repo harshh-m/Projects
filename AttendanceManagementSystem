@@ -1,0 +1,44 @@
+students = ["Harsh", "Rahul", "Aman", "Priya", "Sneha"]
+
+attendance = {}
+
+while True:
+    print("\n=== Attendance Management System ===")
+    print("1. Mark Attendance")
+    print("2. View Attendance")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    # Mark Attendance
+    if choice == "1":
+
+        for student in students:
+            status = input(f"Is {student} present? (P/A): ").upper()
+
+            if status == "P":
+                attendance[student] = "Present"
+            else:
+                attendance[student] = "Absent"
+
+        print("\nAttendance Marked Successfully!")
+
+    # View Attendance
+    elif choice == "2":
+
+        print("\n=== Attendance Report ===")
+
+        if len(attendance) == 0:
+            print("No attendance marked yet.")
+        else:
+            for student, status in attendance.items():
+                print(f"{student} : {status}")
+
+    # Exit
+    elif choice == "3":
+        print("Exiting System...")
+        break
+
+    else:
+        print("Invalid Choice!")
+        
