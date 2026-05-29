@@ -1,0 +1,54 @@
+notes = []
+
+while True:
+    print("\n=== Notes App ===")
+    print("1. Add Note")
+    print("2. View Notes")
+    print("3. Delete Note")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    # Add Note
+    if choice == "1":
+        note = input("Enter your note: ")
+
+        notes.append(note)
+
+        print("Note Added Successfully!")
+
+    # View Notes
+    elif choice == "2":
+
+        print("\n=== Your Notes ===")
+
+        if len(notes) == 0:
+            print("No notes available.")
+        else:
+            for i, note in enumerate(notes, start=1):
+                print(f"{i}. {note}")
+
+    # Delete Note
+    elif choice == "3":
+
+        if len(notes) == 0:
+            print("No notes to delete.")
+        else:
+            for i, note in enumerate(notes, start=1):
+                print(f"{i}. {note}")
+
+            delete = int(input("Enter note number to delete: "))
+
+            if 1 <= delete <= len(notes):
+                removed = notes.pop(delete - 1)
+                print(f"Deleted Note: {removed}")
+            else:
+                print("Invalid Note Number!")
+
+    # Exit
+    elif choice == "4":
+        print("Exiting Notes App...")
+        break
+
+    else:
+        print("Invalid Choice!")
